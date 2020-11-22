@@ -1,4 +1,4 @@
-package org.launchcode.java.demos;
+package exercises;
 
 import java.util.Scanner;
 
