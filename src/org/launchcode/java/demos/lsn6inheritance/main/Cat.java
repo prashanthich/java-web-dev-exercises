@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lsn6inheritance;
+package org.launchcode.java.demos.lsn6inheritance.main;
 
 public class Cat {
 
@@ -8,7 +8,9 @@ public class Cat {
 
     // The biological family for all cat species
     private String family = "Felidae";
-
+    public Cat(){
+        this.weight  = 13;
+    }
     public Cat (double aWeight) {
         weight = aWeight;
     }
