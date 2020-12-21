@@ -8,19 +8,19 @@ public class Main {
         Case menu = new Case();
         ArrayList<Flavor> flavors = menu.getFlavors();
         ArrayList<Cone> cones = menu.getCones();
+        ArrayList<Topping> toppings = menu.getToppings();
 
         Comparator comparator = new FlavorComparator();
-        Comparator coneComparator = new ConeComparator();
 
         System.out.println("Before:" + "\n");
         for (Flavor flavor: flavors){
-            System.out.println(flavor.getName());
+            System.out.println(flavor.getName() + " ,allergens count: " + flavor.getAllergens().size());
         }
 
         flavors.sort(comparator);
         System.out.println("\n" + "After:" + "\n");
         for(Flavor flavor: flavors) {
-            System.out.println(flavor.getName());
+            System.out.println(flavor.getName() + " ,allergens count: " + flavor.getAllergens().size());
         }
 
         System.out.println("Before cone sort:");
@@ -32,6 +32,14 @@ public class Main {
         for (Cone cone: cones){
             System.out.println(cone.getName() + ": $" + cone.getCost());
         }
-
+        System.out.println("Before Topping Sort:");
+        for(Topping topping: toppings){
+            System.out.println(topping.getName());
+        }
+        toppings.sort(new ToppingComparator());
+        System.out.println("After Topping Sort:");
+        for (Topping topping: toppings){
+            System.out.println(topping.getName());
+        }
     }
 }
